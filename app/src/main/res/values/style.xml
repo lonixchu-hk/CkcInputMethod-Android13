@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="KeyboardView" parent="android:Widget">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="keyBackground">@drawable/key_background</item>
+        <item name="keyTextSize">23sp</item>
+        <item name="keyTextColor">@color/black</item>
+        <item name="labelTextSize">14sp</item>
+        <item name="verticalCorrection">-10dp</item>
+    </style>
+</resources>
