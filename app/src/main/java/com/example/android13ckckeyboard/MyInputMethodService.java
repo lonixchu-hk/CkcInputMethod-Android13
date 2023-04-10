@@ -36,11 +36,15 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     static final int SWITCH_QWERTY_KEYCODE = -12;
     static final int SWITCH_SYMBOL1_KEYCODE = -13;
     static final int SWITCH_SYMBOL2_KEYCODE = -14;
+    static final int FULLSIZE_PUNCTUATION = -15;
 
     static final int CKC_CODE_MAX_LENGTH = 6;
     static final int MAX_SINGLE_IN_SINGLE_PREVIEW = 10;
     static final int MAX_SINGLE_COUNT_IN_WORDS_PREVIEW = 15;
     static final List<String> ckcInputOptions = Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
+
+    static final List<String> ckcPunctuationSet1 = Arrays.asList("，", "。", "、", "：", "；", "？", "！", "…", "’", "‘", "“", "”");
+    static final List<String> ckcPunctuationSet2 = Arrays.asList("（", "）", "【", "】", "「", "」", "『", "』", "《", "》", "⸺");
 
     private LinearLayout rootLayout;
     private LinearLayout ckcPreviewBlock;
@@ -57,7 +61,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     private String ckcInputString = "";
     private Map<String, Map<String, List<String>>> wordMap = new HashMap<>();
 
-    private boolean caps = false;
+    private int shiftLayer = 0;
 
     @Override
     public View onCreateInputView() {
@@ -137,7 +141,6 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
             }
             wordMap.get(code).get("words").add(word);
         }
-        Log.d("Keyboard", "wordMap " + wordMap.get("012000"));
 
         // assign views and return
         currentKeyboard = ckcKeyboard;
@@ -180,7 +183,6 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                     }
                     if (canDeleteText) {
                         CharSequence selectedText = inputConnection.getSelectedText(0);
-                        Log.d("Backspace", String.valueOf(selectedText));
                         if (TextUtils.isEmpty(selectedText)) {
                             inputConnection.deleteSurroundingText(1, 0);
                         } else {
@@ -189,12 +191,20 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                     }
                     break;
                 case Keyboard.KEYCODE_SHIFT:
-                    caps = !caps;
-                    keyboardView.setShifted(caps);
+                    if (shiftLayer >= 2) {
+                        keyboardView.setShifted(false);
+                        shiftLayer = 0;
+                    } else {
+                        keyboardView.setShifted(true);
+                        shiftLayer++;
+                    }
                     keyboardView.invalidateAllKeys();
                     break;
                 case Keyboard.KEYCODE_DONE:
                     inputConnection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                    break;
+                case FULLSIZE_PUNCTUATION:
+                    showCkcPunctuation();
                     break;
                 default :
 
@@ -210,10 +220,15 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
 
                     if (!isHandleAsCkcInput) {
                         char code = (char) primaryCode;
-                        if(Character.isLetter(code) && caps){
+                        if(Character.isLetter(code) && shiftLayer > 0){
                             code = Character.toUpperCase(code);
                         }
                         inputConnection.commitText(String.valueOf(code), 1);
+                        if (shiftLayer == 1) {
+                            keyboardView.setShifted(false);
+                            shiftLayer = 0;
+                            keyboardView.invalidateAllKeys();
+                        }
                     }
             }
             if (ckcInputString != "") {
@@ -327,6 +342,37 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
         }
         return isCkcInputEmpty;
     }
+
+    private void showCkcPunctuation() {
+        if (currentKeyboard != ckcKeyboard) {
+            return;
+        }
+        clearPreview();
+        RecyclerViewAdapter adapter_single = new RecyclerViewAdapter(ckcPunctuationSet1, this);
+        previewSingle.setAdapter(adapter_single);
+        RecyclerViewAdapter adapter_word = new RecyclerViewAdapter(ckcPunctuationSet2, this);
+        previewWords.setAdapter(adapter_word);
+        ckcPreviewBlock.setVisibility(View.VISIBLE);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void onText(CharSequence charSequence) {

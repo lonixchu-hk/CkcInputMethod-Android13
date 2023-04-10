@@ -44,8 +44,7 @@
         <Key app:codes="59" app:keyLabel=";" />
         <Key app:codes="33" app:keyLabel="!" />
         <Key app:codes="63" app:keyLabel="?" />
-        <!--        <Key app:codes="-5" app:keyIcon="@drawable/ic_backspace" app:keyWidth="20%p" />-->
-        <Key app:codes="-5" app:keyLabel="BK" app:keyWidth="15%p" app:isRepeatable="true" />
+        <Key app:codes="-5" app:keyLabel="⌫" app:keyWidth="15%p" app:isRepeatable="true" />
     </Row>
 
     <Row>
@@ -53,10 +52,10 @@
         <!--        <Key app:codes="-7" app:keyIcon="@drawable/ic_123" />-->
         <!--        <Key app:codes="32" app:keyIcon="@drawable/ic_spacebar" app:keyWidth="50%p" />-->
         <Key app:codes="-12" app:keyLabel="ABC" app:keyWidth="15%p"/>
-        <Key app:codes="32" app:keyLabel="" app:keyWidth="33%p" />
+        <Key app:codes="32" app:keyLabel=" " app:keyWidth="33%p" />
         <Key app:codes="44" app:keyLabel="," />
         <Key app:codes="46" app:keyLabel="." />
-        <Key app:codes="-4" app:keyLabel="Enter" app:keyWidth="15%p"/>
+        <Key app:codes="-4" app:keyIcon="@drawable/icon_return" app:keyWidth="15%p"/>
     </Row>
 
     <Row app:keyHeight="2dp"/>

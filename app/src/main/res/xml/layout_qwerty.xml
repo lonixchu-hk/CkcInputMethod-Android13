@@ -37,7 +37,7 @@
     <Row>
         <Key
             app:codes="-1"
-            app:keyLabel="SHIFT"
+            app:keyIcon="@drawable/icon_shift"
             app:keyWidth="15%p"
             app:keyEdgeFlags="left"
             app:isModifier="true" />
@@ -48,23 +48,20 @@
         <Key app:codes="98" app:keyLabel="b" />
         <Key app:codes="110" app:keyLabel="n" />
         <Key app:codes="109" app:keyLabel="m" />
-<!--        <Key app:codes="-5" app:keyIcon="@drawable/ic_backspace" app:keyWidth="20%p" />-->
         <Key
             app:codes="-5"
-            app:keyLabel="BK"
+            app:keyLabel="⌫"
             app:keyWidth="15%p"
             app:isRepeatable="true" />
     </Row>
 
     <Row>
-        <!--        <Key app:codes="-7" app:keyIcon="@drawable/ic_123" />-->
-        <!--        <Key app:codes="32" app:keyIcon="@drawable/ic_spacebar" app:keyWidth="50%p" />-->
         <Key app:codes="-11" app:keyLabel="中" app:keyWidth="15%p" app:keyEdgeFlags="left" app:keyBackground="@drawable/key_background_switch"/>
-        <Key app:codes="-13" app:keyLabel="123" app:keyWidth="15%p" app:keyBackground="@drawable/key_background_switch" />
+        <Key app:codes="-13" app:keyLabel="123" app:keyWidth="15%p" />
         <Key app:codes="32" app:keyLabel=" " app:keyWidth="34%p" />
         <Key app:codes="44" app:keyLabel="," app:keyBackground="@drawable/key_background_special"/>
         <Key app:codes="46" app:keyLabel="." app:keyBackground="@drawable/key_background_special"/>
-        <Key app:codes="-4" app:keyLabel="Enter" app:keyWidth="15%p" app:keyBackground="@drawable/key_background_enter"/>
+        <Key app:codes="-4" app:keyIcon="@drawable/icon_return" app:keyWidth="15%p" app:keyBackground="@drawable/key_background_enter"/>
     </Row>
 
     <Row app:keyHeight="2dp"/>
