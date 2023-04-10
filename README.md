@@ -1,6 +1,8 @@
-# CKC Input Method 縱橫輸入法
+# CKC Input Method 縱橫輸入法 on Android 13
 
-CKC Input Method is a custom keyboard for Android that provides a unique input method for Chinese language users. This input method is called 縱橫輸入法 (Zhongheng Input Method) and is based on the strokes and structure of Chinese characters.
+CKC Input Method is a custom keyboard for Android 13 that provides a unique input method for Chinese language users. This input method is called 縱橫輸入法 (Zhongheng Input Method) and is based on the strokes and structure of Chinese characters.
+
+**This project is only for android 13. For android user while lower version, please visit [CKC site](http://www.ckcsys.com/download/index_mp.html) to donwload the official apk**
 
 ## Features
 
