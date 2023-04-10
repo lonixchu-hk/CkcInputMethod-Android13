@@ -37,6 +37,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
     static final int SWITCH_SYMBOL1_KEYCODE = -13;
     static final int SWITCH_SYMBOL2_KEYCODE = -14;
     static final int FULLSIZE_PUNCTUATION = -15;
+    static final int ESC_BUTTON = -16;
 
     static final int CKC_CODE_MAX_LENGTH = 6;
     static final int MAX_SINGLE_IN_SINGLE_PREVIEW = 10;
@@ -205,6 +206,11 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                     break;
                 case FULLSIZE_PUNCTUATION:
                     showCkcPunctuation();
+                    break;
+                case ESC_BUTTON:
+                    if (currentKeyboard == ckcKeyboard) {
+                        clearPreview();
+                    }
                     break;
                 default :
 

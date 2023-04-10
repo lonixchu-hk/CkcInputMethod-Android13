@@ -11,7 +11,7 @@
 
     <!-- First row -->
     <Row>
-        <Key app:codes="63" app:keyLabel="?" app:keyWidth="12%p"/>
+        <Key app:codes="-16" app:keyLabel="Esc" app:keyWidth="12%p"/>
         <Key app:codes="55" app:keyLabel="7"/>
         <Key app:codes="56" app:keyLabel="8"/>
         <Key app:codes="57" app:keyLabel="9"/>
