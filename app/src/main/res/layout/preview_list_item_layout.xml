@@ -3,9 +3,9 @@
     android:id="@+id/element_textview"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="9dp"
+    android:padding="12dp"
     android:textColor="@android:color/black"
-    android:textSize="14sp"
+    android:textSize="18sp"
     android:clickable="true"
     android:focusable="true"
     android:background="?android:attr/selectableItemBackground" />

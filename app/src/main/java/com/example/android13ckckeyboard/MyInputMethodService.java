@@ -1,5 +1,6 @@
 package com.example.android13ckckeyboard;
 
+import android.graphics.drawable.Drawable;
 import android.inputmethodservice.InputMethodService;
 
 
@@ -79,9 +80,6 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
         previewSingle.setLayoutManager(layoutManager_single);
         LinearLayoutManager layoutManager_word = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         previewWords.setLayoutManager(layoutManager_word);
-
-
-
 
         // get CKC Data
         InputStream inputStream = null;
@@ -163,9 +161,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
 
     @Override
     public void onKey(int primaryCode, int[] keyCodes) {
-        Log.d("Keyboard", "onKey called with primaryCode " + primaryCode);
         InputConnection inputConnection = getCurrentInputConnection();
-        Log.d("Keyboard", "inputConnection is  " + inputConnection);
         if (inputConnection != null) {
 
             // general Behavior
@@ -178,25 +174,23 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                     switchKeyboardByCode(primaryCode);
                     break;
                 case Keyboard.KEYCODE_DELETE :
-
                     Boolean canDeleteText = true;
                     if (currentKeyboard == ckcKeyboard) {
                         canDeleteText = deleteCkcInput();
                     }
-
                     if (canDeleteText) {
                         CharSequence selectedText = inputConnection.getSelectedText(0);
-
+                        Log.d("Backspace", String.valueOf(selectedText));
                         if (TextUtils.isEmpty(selectedText)) {
                             inputConnection.deleteSurroundingText(1, 0);
                         } else {
                             inputConnection.commitText("", 1);
                         }
                     }
-
+                    break;
                 case Keyboard.KEYCODE_SHIFT:
                     caps = !caps;
-                    qwertyKeyboard.setShifted(caps);
+                    keyboardView.setShifted(caps);
                     keyboardView.invalidateAllKeys();
                     break;
                 case Keyboard.KEYCODE_DONE:

@@ -12,7 +12,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/ckc_preview"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:gravity="left"
         android:orientation="vertical"
         android:background="@drawable/preview_background"
@@ -21,7 +21,7 @@
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:gravity="left"
             android:orientation="horizontal"
             android:background="@drawable/preview_background"
@@ -31,11 +31,11 @@
                 android:id="@+id/input_preview"
                 android:layout_width="0dp"
                 android:layout_weight="0.18"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingLeft="7dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="7dp"
-                android:textSize="14sp"
+
+                android:textSize="15sp"
+                android:gravity="center_vertical"
                 android:background="@drawable/input_preview_background"
                 />
 
@@ -43,7 +43,7 @@
                 android:id="@+id/single_preview"
                 android:layout_width="0dp"
                 android:layout_weight="0.82"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"
                 />
 
@@ -52,7 +52,7 @@
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:gravity="left"
             android:orientation="vertical"
             android:background="@drawable/preview_background"

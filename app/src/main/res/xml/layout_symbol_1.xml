@@ -7,6 +7,8 @@
     app:keyHeight="42dp"
     app:keyBackground="@drawable/key_background" >
 
+    <Row app:keyHeight="2dp"/>
+
     <Row>
         <Key app:codes="49" app:keyLabel="1"/>
         <Key app:codes="50" app:keyLabel="2"/>
@@ -56,6 +58,8 @@
         <Key app:codes="46" app:keyLabel="." />
         <Key app:codes="-4" app:keyLabel="Enter" app:keyWidth="15%p"/>
     </Row>
+
+    <Row app:keyHeight="2dp"/>
 
 
 </Keyboard>
