@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:keyWidth="8.9%p"
+    app:horizontalGap="1%p"
+    app:verticalGap="20px"
+    app:keyHeight="42dp"
+    app:keyBackground="@drawable/key_background" >
+
+    <Row>
+        <Key app:codes="33" app:keyLabel="!"/>
+        <Key app:codes="96" app:keyLabel="`"/>
+        <Key app:codes="124" app:keyLabel="|"/>
+        <Key app:codes="92" app:keyLabel="\"/>
+        <Key app:codes="60" app:keyLabel="&lt;"/>
+        <Key app:codes="62" app:keyLabel=">"/>
+        <Key app:codes="123" app:keyLabel="{"/>
+        <Key app:codes="125" app:keyLabel="}"/>
+        <Key app:codes="91" app:keyLabel="["/>
+        <Key app:codes="93" app:keyLabel="]"/>
+    </Row>
+
+    <Row>
+        <Key app:codes="36" app:keyLabel="$"/>
+        <Key app:codes="8364" app:keyLabel="€"/>
+        <Key app:codes="163" app:keyLabel="£"/>
+        <Key app:codes="165" app:keyLabel="¥"/>
+        <Key app:codes="169" app:keyLabel="©"/>
+        <Key app:codes="174" app:keyLabel="®"/>
+        <Key app:codes="128514"   app:keyLabel="😂"/>
+        <Key app:codes="128591" app:keyLabel="🙏"/>
+        <Key app:codes="128077" app:keyLabel="👍"/>
+        <Key app:codes="1" app:keyLabel="👏"/>
+    </Row>
+
+    <Row>
+        <Key app:codes="-13" app:keyLabel="2/2" app:keyWidth="15%p" app:keyEdgeFlags="left" app:isModifier="true" />
+        <Key app:codes="215" app:keyLabel="×" />
+        <Key app:codes="247" app:keyLabel="÷" />
+        <Key app:codes="61" app:keyLabel="=" />
+        <Key app:codes="94" app:keyLabel="^" />
+        <Key app:codes="8730" app:keyLabel="√" />
+        <Key app:codes="8901" app:keyLabel="⋅" />
+        <Key app:codes="176" app:keyLabel="°" />
+        <!--        <Key app:codes="-5" app:keyIcon="@drawable/ic_backspace" app:keyWidth="20%p" />-->
+        <Key app:codes="-5" app:keyLabel="BK" app:keyWidth="15%p" app:isRepeatable="true" />
+    </Row>
+
+    <Row>
+        <Key app:codes="-11" app:keyLabel="中" app:keyWidth="15%p" app:keyEdgeFlags="left" />
+        <!--        <Key app:codes="-7" app:keyIcon="@drawable/ic_123" />-->
+        <!--        <Key app:codes="32" app:keyIcon="@drawable/ic_spacebar" app:keyWidth="50%p" />-->
+        <Key app:codes="-12" app:keyLabel="ABC" app:keyWidth="15%p"/>
+        <Key app:codes="32" app:keyLabel="" app:keyWidth="33%p" />
+        <Key app:codes="44" app:keyLabel="," />
+        <Key app:codes="46" app:keyLabel="." />
+        <Key app:codes="-4" app:keyLabel="Enter" app:keyWidth="15%p"/>
+    </Row>
+
+
+</Keyboard>

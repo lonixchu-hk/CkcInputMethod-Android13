@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/element_textview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="9dp"
+    android:textColor="@android:color/black"
+    android:textSize="14sp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?android:attr/selectableItemBackground" />
